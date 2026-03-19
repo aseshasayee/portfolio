@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --foreground-rgb: 248, 250, 252;
+  --background-start-rgb: 2, 6, 23;
+  --background-end-rgb: 30, 27, 75;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom right,
+      rgb(var(--background-start-rgb)),
+      rgb(var(--background-end-rgb)));
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Put utility/extra classes inside an @layer so Tailwind can see them */
+@layer utilities {
+  .text-balance {
+    /* modern browsers support text-wrap: balance; but fallback possible */
+    text-wrap: balance;
+  }
+
+  .glass-nav {
+    @apply backdrop-blur-md bg-[#020617]/70 border-b border-white/10;
+  }
+
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+  }
+
+  .neon-border {
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.2);
+  }
+}
